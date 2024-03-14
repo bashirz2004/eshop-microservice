@@ -3,7 +3,6 @@ server:
 spring:
   application:
     name: product
-  thread-executor: virtual
   datasource:
     url: jdbc:postgresql://localhost:5432/product
     username: postgres
@@ -28,6 +27,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
 
 
 
