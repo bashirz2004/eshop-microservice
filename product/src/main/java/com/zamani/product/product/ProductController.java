@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/product/api/v1")
 @Slf4j
 public class ProductController extends BaseController {
     private final IProductService iProductService;

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class JmsConsumer implements MessageListener {
     @Override
-    @JmsListener(destination = "${active-mq.topic}", containerFactory = "jmsListenerContainerFactory")
+    @JmsListener(destination = "${active-mq.queue}", containerFactory = "jmsListenerContainerFactory")
     public void onMessage(Message message) {
         try {
             ObjectMessage objectMessage = (ObjectMessage) message;

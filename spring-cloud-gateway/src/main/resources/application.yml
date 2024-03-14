@@ -16,6 +16,8 @@ spring:
           uri: http://localhost:81
           predicates:
             - Path=/product/**
+          #filters:
+            #- RewritePath=/product/(?<path>.*), /$\{path}
 
 springdoc:
   packages-to-scan: com.zamani.springcloudgateway
