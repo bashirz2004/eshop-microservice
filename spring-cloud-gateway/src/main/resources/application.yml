@@ -13,14 +13,10 @@ spring:
           lower-case-service-id: true
       routes:
         - id: product_route
-          uri: lb://product
+          uri: http://localhost:81
           predicates:
             - Path=/product/**
 
-        - id: delivery_route
-          uri: lb://delivery
-          predicates:
-            - Path=/delivery/**
 springdoc:
   packages-to-scan: com.zamani.springcloudgateway
   paths-to-match: /**/api/**
@@ -40,14 +36,6 @@ logging:
   level:
     org.springframework.cloud.gateway: DEBUG
     reactor.netty.http.client: DEBUG
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    prefer-ip-address: true
-
 
 
 

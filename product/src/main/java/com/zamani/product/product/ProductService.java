@@ -1,20 +1,31 @@
 package com.zamani.product.product;
 
+import com.zamani.MyEvent;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ProductService implements IProductService {
     private final IProductRepository iProductRepository;
+    private final JmsTemplate jmsTemplate;
 
-    public ProductService(IProductRepository iProductRepository) {
+    @Value("${active-mq.queue}")
+    private String queue;
+
+    public ProductService(IProductRepository iProductRepository, JmsTemplate jmsTemplate) {
         this.iProductRepository = iProductRepository;
+        this.jmsTemplate = jmsTemplate;
     }
 
     @Override
     public Product save(Product product) {
-        return iProductRepository.save(product);
+        iProductRepository.save(product);
+        jmsTemplate.convertAndSend(queue, new MyEvent(UUID.randomUUID().toString(), product.getId().toString(), "product_saved"));
+        return product;
     }
 
     @Override
