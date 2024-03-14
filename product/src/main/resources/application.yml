@@ -1,0 +1,33 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: product
+  thread-executor: virtual
+  datasource:
+    url: jdbc:postgresql://localhost:5432/product
+    username: postgres
+    password: postgres
+    hikari:
+      driver-class-name: org.postgresql.Driver
+      connection-timeout: 30000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+springdoc:
+  packages-to-scan: com.zamani
+  paths-to-match: /**/api/**
+  version: 1.5.8
+  swagger-ui:
+    path: api-docs
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
+
