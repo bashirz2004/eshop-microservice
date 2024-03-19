@@ -1,4 +1,4 @@
-package com.zamani.product;
+package com.zamani.config;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.web.embedded.tomcat.TomcatProtocolHandlerCustomizer;

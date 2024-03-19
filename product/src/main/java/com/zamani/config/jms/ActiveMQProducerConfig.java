@@ -1,4 +1,4 @@
-package com.zamani.product.configs.jms;
+package com.zamani.config.jms;
 
 import jakarta.jms.ConnectionFactory;
 import org.apache.activemq.ActiveMQConnectionFactory;

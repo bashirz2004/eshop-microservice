@@ -1,4 +1,4 @@
-package com.zamani.product.configs.jms;
+package com.zamani.config.jms;
 
 import com.zamani.MyEvent;
 import lombok.extern.slf4j.Slf4j;

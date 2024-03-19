@@ -1,4 +1,4 @@
-package com.zamani.product.product;
+package com.zamani.product;
 
 import com.zamani.MyEvent;
 import org.springframework.beans.factory.annotation.Value;

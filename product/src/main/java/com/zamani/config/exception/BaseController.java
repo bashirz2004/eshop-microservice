@@ -1,4 +1,4 @@
-package com.zamani.product.configs.exception;
+package com.zamani.config.exception;
 
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;

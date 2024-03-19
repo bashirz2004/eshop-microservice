@@ -1,4 +1,4 @@
-package com.zamani.product.configs.exception;
+package com.zamani.config.exception;
 
 import lombok.*;
 

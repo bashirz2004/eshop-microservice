@@ -1,4 +1,4 @@
-package com.zamani.product.product;
+package com.zamani.product;
 
 import java.util.List;
 
