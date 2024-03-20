@@ -12,12 +12,18 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: product_route
+        - id: product_command_route
           uri: http://localhost:81
           predicates:
-            - Path=/product/**
+            - Path=/product-command/**
           #filters:
-            #- RewritePath=/product/(?<path>.*), /$\{path}
+            #- RewritePath=/product-command/(?<path>.*), /$\{path}
+        - id: product_query_route
+          uri: http://localhost:82
+          predicates:
+            - Path=/product-query/**
+            #filters:
+            #- RewritePath=/product-query/(?<path>.*), /$\{path}
 
 springdoc:
   packages-to-scan: com.zamani.springcloudgateway

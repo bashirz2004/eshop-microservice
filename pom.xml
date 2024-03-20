@@ -7,6 +7,7 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
+        <module>product-query</module>
         <module>product-command</module>
         <module>spring-cloud-gateway</module>
         <module>notification</module>
