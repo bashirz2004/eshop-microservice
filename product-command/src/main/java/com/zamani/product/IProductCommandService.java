@@ -2,8 +2,6 @@ package com.zamani.product;
 
 import java.util.List;
 
-public interface IProductService {
+public interface IProductCommandService {
     Product save(Product product);
-
-    List<Product> findAll();
 }

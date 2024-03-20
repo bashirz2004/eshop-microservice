@@ -2,7 +2,7 @@ server:
   port: 81
 spring:
   application:
-    name: product
+    name: product-command
   datasource:
     url: jdbc:postgresql://localhost:5432/product
     username: postgres
@@ -36,7 +36,7 @@ springdoc:
     path: api-docs
 active-mq:
   broker-url: tcp://localhost:61616
-  queue: eshop-queue
+  topic: product-events-topic
 
 
 

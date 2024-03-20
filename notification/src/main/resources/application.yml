@@ -6,7 +6,7 @@ spring:
 
 active-mq:
   broker-url: tcp://localhost:61616
-  queue: eshop-queue
+  topic: product-events-topic
 
 
 

@@ -1,4 +1,4 @@
-package com.zamani.notification.consumer;
+package com.zamani.notification.jms;
 
 import jakarta.jms.ConnectionFactory;
 import org.apache.activemq.ActiveMQConnectionFactory;
@@ -19,7 +19,7 @@ public class ActiveMQConsumerConfig {
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory();
         activeMQConnectionFactory.setBrokerURL(brokerUrl);
         activeMQConnectionFactory.setTrustAllPackages(true);
-        //activeMQConnectionFactory.setTrustedPackages(Arrays.asList("com.com.zamani"));
+        //activeMQConnectionFactory.setTrustedPackages(Arrays.asList("com.zamani.product"));
         return activeMQConnectionFactory;
     }
 
@@ -27,9 +27,9 @@ public class ActiveMQConsumerConfig {
     public DefaultJmsListenerContainerFactory jmsListenerContainerFactory() {
         DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
         factory.setConnectionFactory(connectionFactory());
-        //factory.setPubSubDomain(true);
-        //factory.setClientId("listener-1");
-        //factory.setSubscriptionDurable(true);
+        factory.setPubSubDomain(true);
+        factory.setClientId("notif-subscriber-client");
+        factory.setSubscriptionDurable(true);
         return factory;
     }
 }

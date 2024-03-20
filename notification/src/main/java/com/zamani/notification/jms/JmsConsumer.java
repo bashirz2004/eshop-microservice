@@ -1,6 +1,6 @@
-package com.zamani.notification.consumer;
+package com.zamani.notification.jms;
 
-import com.zamani.MyEvent;
+import com.zamani.product.ProductEvent;
 import jakarta.jms.Message;
 import jakarta.jms.MessageListener;
 import jakarta.jms.ObjectMessage;
@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class JmsConsumer implements MessageListener {
     @Override
-    @JmsListener(destination = "${active-mq.queue}", containerFactory = "jmsListenerContainerFactory")
+    @JmsListener(destination = "${active-mq.topic}", containerFactory = "jmsListenerContainerFactory")
     public void onMessage(Message message) {
         try {
             ObjectMessage objectMessage = (ObjectMessage) message;
-            MyEvent myEvent = (MyEvent) objectMessage.getObject();
+            ProductEvent productEvent = (ProductEvent) objectMessage.getObject();
             //do additional processing
-            log.info("Received Message: " + myEvent.toString());
+            log.info("پیام وقوع رویداد دریافت شد: " + productEvent.toString());
         } catch (Exception e) {
             log.error("Received Exception : " + e);
         }

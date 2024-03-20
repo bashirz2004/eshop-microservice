@@ -19,7 +19,7 @@ public class ActiveMQProducerConfig {
     public ConnectionFactory connectionFactory() {
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory();
         activeMQConnectionFactory.setBrokerURL(brokerUrl);
-        activeMQConnectionFactory.setClientID("myClient");
+        activeMQConnectionFactory.setClientID("product-publisher-client");
         return activeMQConnectionFactory;
     }
 
@@ -27,7 +27,7 @@ public class ActiveMQProducerConfig {
     public JmsTemplate jmsTemplate() {
         JmsTemplate jmsTemplate = new JmsTemplate();
         jmsTemplate.setConnectionFactory(connectionFactory());
-        //jmsTemplate.setPubSubDomain(true);  // enable for Pub Sub to topic. Not Required for Queue.
+        jmsTemplate.setPubSubDomain(true);  // در صورتی که صف داریم این خط لازم نیست
         return jmsTemplate;
     }
 }
