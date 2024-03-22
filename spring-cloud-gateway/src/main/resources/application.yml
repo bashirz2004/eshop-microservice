@@ -24,12 +24,35 @@ spring:
             - Path=/product-query/**
             #filters:
             #- RewritePath=/product-query/(?<path>.*), /$\{path}
+        - id: product_command_swagger_route
+          uri: http://localhost:81
+          predicates:
+            - Path=/v3/api-docs/product-command/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /v3/api-docs
+        - id: product_command_swagger_route
+          uri: http://localhost:82
+          predicates:
+            - Path=/v3/api-docs/product-query/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /v3/api-docs
+
 
 springdoc:
   packages-to-scan: com.zamani.springcloudgateway
   paths-to-match: /**/api/**
   swagger-ui:
+    operations-sorter: alpha
+    tags-sorter: alpha
+    urls:
+      - name: gateway
+        url: /v3/api-docs
+      - name: product-command
+        url: /v3/api-docs/product-command
+      - name: product-query
+        url: /v3/api-docs/product-query
     path: /api-docs
+    display-request-duration: true
 
 management:
   endpoint:
