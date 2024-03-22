@@ -34,6 +34,7 @@ springdoc:
   version: 1.5.8
   swagger-ui:
     path: /api-docs
+
 active-mq:
   broker-url: tcp://localhost:61616
   topic: product-events-topic
