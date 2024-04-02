@@ -1,7 +1,6 @@
 package com.zamani.product;
 
 import com.zamani.config.exception.BaseController;
-import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,7 +18,7 @@ public class ProductCommandController extends BaseController {
 
     @PostMapping(value = "/save")
     @PreAuthorize("hasRole('product-admin')")
-    public Product add(@RequestBody Product product, @RequestHeader(name = "authorization") @Parameter(hidden = true,name = "authorization") String authorization) {
+    public Product add(@RequestBody Product product, @RequestHeader(name = "authorization") @Parameter(hidden = true, name = "authorization") String authorization) {
         return iProductCommandService.save(product);
     }
 

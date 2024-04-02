@@ -1,4 +1,4 @@
-package com.zamani.productquery.config.jms;
+package com.zamani.config.jms;
 
 import com.zamani.product.ProductEvent;
 import com.zamani.productquery.Product;

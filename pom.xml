@@ -11,6 +11,7 @@
         <module>product-command</module>
         <module>spring-cloud-gateway</module>
         <module>notification</module>
+        <module>idp</module>
     </modules>
     <name>eshop</name>
     <description>eshop multi module maven project</description>

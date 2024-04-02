@@ -12,6 +12,10 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
+        - id: idp_route
+          uri: http://localhost:84
+          predicates:
+            - Path=/idp/**
         - id: product_command_route
           uri: http://localhost:81
           predicates:

@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: product-query
+  jackson.serialization.indent_output: true
+
 redis:
   host: localhost
   port: 6379
@@ -15,3 +17,16 @@ springdoc:
   version: 1.5.8
   swagger-ui:
     path: /api-docs
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    health:
+      show-details: always
+      diskspace:
+        enabled: false
+      circuitbreakers:
+        enabled: true
+      ratelimiters:
+        enabled: false
